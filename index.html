@@ -40,7 +40,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('images/leech image.jpg');
+      background-image: url('images/leech%20image.jpg');
       background-size: cover;
       background-position: center;
       opacity: 0.2;
@@ -176,14 +176,13 @@
 
     .img-placeholder {
       width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #111111;
-      min-height: 280px;
+      min-height: 320px;
       background-size: cover;
       background-position: center;
-      transition: 0.2s;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     /* specific image themes to reflect each section's vibe — but all high-quality + full width */
@@ -192,14 +191,23 @@
       background-size: cover;
       background-position: center;
     }
+
     .img-sucker {
       background-image: url('images/2blog.jfif');
+      background-size: cover;
+      background-position: center;
     }
+
     .img-tunnel {
       background-image: url('images/3blog.jfif');
+      background-size: cover;
+      background-position: center;
     }
+
     .img-shield {
       background-image: url('images/4blog.jfif');
+      background-size: cover;
+      background-position: center;
     }
 
     .img-placeholder span {
@@ -216,6 +224,7 @@
     .section-cta {
       margin-top: 16px;
     }
+
     .btn-cyber {
       display: inline-flex;
       align-items: center;
@@ -232,6 +241,7 @@
       letter-spacing: 0.5px;
       cursor: pointer;
     }
+
     .btn-cyber:hover {
       background: #39FF14;
       color: #0D0D0D;
@@ -245,6 +255,7 @@
       border-top: 1px solid rgba(57, 255, 20, 0.3);
       text-align: center;
     }
+
     .offer-badge {
       font-size: 14px;
       text-transform: uppercase;
@@ -252,11 +263,13 @@
       color: #39FF14;
       margin-bottom: 16px;
     }
+
     .offer-title {
       font-size: clamp(24px, 5vw, 36px);
       font-weight: 800;
       margin-bottom: 16px;
     }
+
     .offer-price {
       font-size: 42px;
       font-weight: 800;
@@ -264,11 +277,13 @@
       margin: 16px 0 8px;
       letter-spacing: -1px;
     }
+
     .offer-desc {
       color: #aaa;
       max-width: 500px;
       margin: 12px auto 24px;
     }
+
     .btn-footer {
       background: #39FF14;
       padding: 14px 42px;
@@ -280,10 +295,12 @@
       display: inline-block;
       transition: all 0.2s;
     }
+
     .btn-footer:hover {
       background: #28cc0e;
       transform: translateY(-2px);
     }
+
     .footer-copyright {
       margin-top: 48px;
       font-size: 12px;
@@ -320,15 +337,7 @@
         min-height: 220px;
       }
     }
-    /* smooth image aspect ratio (maintain consistent visual) */
-    .img-placeholder {
-      width: 100%;
-      min-height: 320px;
-      background-repeat: no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+
     @media (max-width: 640px) {
       .img-placeholder {
         min-height: 200px;
@@ -340,10 +349,11 @@
         font-size: 1rem;
       }
     }
-    /* interactive link reset */
+
     a, button {
       cursor: pointer;
     }
+
     .btn-cyber, .btn-primary, .btn-footer {
       transition: all 0.2s ease;
     }
@@ -353,11 +363,11 @@
 
 <!-- Hero Section: Dark theme, high impact, background image placeholder -->
 <section class="hero">
-  <div class="hero-bg-placeholder" aria-label="cyber grid background"></div>
+  <div class="hero-bg-placeholder" aria-label="cyber background"></div>
   <div class="container hero-content">
     <div class="hero-badge">// DIGITAL LOCKDOWN //</div>
     <h1>Your phone is being harvested for cash —<br>stop the bleeding.</h1>
-    <p>It’s not just "bad luck" anymore. In the U.S., phone hacking has become a multi-billion dollar industry where you are the product. If you’ve noticed more scam calls or a glitchy phone, it’s because someone is officially trying to profit off your data. Here is exactly how I’d shut them down.</p>
+    <p>It's not just "bad luck" anymore. In the U.S., phone hacking has become a multi-billion dollar industry where you are the product. If you've noticed more scam calls or a glitchy phone, it's because someone is officially trying to profit off your data. Here is exactly how I'd shut them down.</p>
     <a href="#" class="btn-primary">⚡ SECURE YOUR DEVICE NOW</a>
   </div>
 </section>
@@ -444,7 +454,7 @@
     </div>
   </section>
 
-  <!-- additional credibility block (the facts) but stays inside flow — not numbered, but uses existing vertical consistency -->
+  <!-- additional credibility block (the facts) but stays inside flow -->
   <section class="security-block" style="padding-top: 20px;">
     <div class="block-subtitle">
       <span class="block-number" style="background:#39FF14; color:#0D0D0D;">⚠️</span>
@@ -456,7 +466,7 @@
       <strong>Fact:</strong> "Free" security apps often sell your info to the same people you are trying to avoid.
     </div>
     <div class="visual-container" style="margin-top: 20px;">
-      <div class="img-placeholder" style="background-image: url('https://placehold.co/1200x600/1a1a1a/39FF14?text=VOICE+CLONING+ALERT+DATA+BREACH+STATS'); background-size: cover; background-position: center;">
+      <div class="img-placeholder" style="background-image: url('images/4blog.jfif'); background-size: cover; background-position: center;">
         <span>📊 1 IN 4 AMERICANS HIT — REAL-TIME THREAT MAP</span>
       </div>
     </div>
@@ -470,7 +480,7 @@
 <footer class="footer-offer">
   <div class="container">
     <div class="offer-badge">KILL THE MONTHLY "SAFETY TAX"</div>
-    <div class="offer-title">You shouldn’t have to pay a monthly subscription<br>just to not get robbed.</div>
+    <div class="offer-title">You shouldn't have to pay a monthly subscription<br>just to not get robbed.</div>
     <div class="offer-price">🔥 ONE-TIME FEE 🔥</div>
     <div class="offer-desc">
       Get the <strong>All-in-One Bundle</strong>: Deep Engine Sweep + Ghost Filter + Private Tunnel + AI Shield.<br>
