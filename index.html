@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
   <title>CYBER LOCKDOWN | Secure Your Digital Life</title>
   <style>
     * {
@@ -13,25 +13,30 @@
 
     body {
       background-color: #0D0D0D;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       color: #FFFFFF;
       line-height: 1.5;
       scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
     }
 
     /* Container for consistent width */
     .container {
+      width: 100%;
       max-width: 1280px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 16px;
     }
 
-    /* ========== HERO SECTION (dark, high-impact) ========== */
+    /* ========== HERO SECTION ========== */
     .hero {
       position: relative;
       background: linear-gradient(135deg, #0a0a0a 0%, #0F0F0F 100%);
-      padding: 80px 0 100px;
+      padding: 50px 0 70px;
       border-bottom: 1px solid rgba(57, 255, 20, 0.2);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
     }
 
     .hero-bg-placeholder {
@@ -43,31 +48,31 @@
       background-image: url('leech%20image.jpg');
       background-size: cover;
       background-position: center;
-      opacity: 0.2;
+      background-repeat: no-repeat;
+      opacity: 0.12;
       z-index: 0;
-      filter: grayscale(20%);
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 900px;
+      width: 100%;
     }
 
     .hero-badge {
-      font-size: 14px;
+      font-size: 11px;
       letter-spacing: 3px;
       text-transform: uppercase;
       color: #39FF14;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       font-weight: 500;
     }
 
     .hero h1 {
-      font-size: clamp(44px, 8vw, 76px);
+      font-size: clamp(32px, 8vw, 64px);
       font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 24px;
+      line-height: 1.2;
+      margin-bottom: 20px;
       letter-spacing: -0.02em;
       background: linear-gradient(135deg, #FFFFFF 70%, #39FF14 100%);
       -webkit-background-clip: text;
@@ -76,22 +81,23 @@
     }
 
     .hero p {
-      font-size: 1.3rem;
+      font-size: clamp(15px, 4vw, 1.2rem);
       color: #CCCCCC;
-      max-width: 700px;
-      margin-bottom: 32px;
+      width: 100%;
+      margin-bottom: 28px;
       border-left: 3px solid #39FF14;
-      padding-left: 20px;
+      padding-left: 16px;
     }
 
     .btn-primary {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       background: #39FF14;
       color: #0D0D0D;
       font-weight: 700;
-      font-size: 18px;
-      padding: 14px 36px;
+      font-size: 15px;
+      padding: 14px 24px;
       border-radius: 60px;
       text-decoration: none;
       transition: all 0.2s ease;
@@ -99,17 +105,18 @@
       border: none;
       cursor: pointer;
       box-shadow: 0 0 12px rgba(57, 255, 20, 0.4);
+      width: 100%;
+      max-width: 280px;
+      text-align: center;
     }
 
-    .btn-primary:hover {
-      background: #2de010;
-      transform: scale(1.02);
-      box-shadow: 0 0 20px rgba(57, 255, 20, 0.7);
+    .btn-primary:active {
+      transform: scale(0.98);
     }
 
-    /* ========== SECTION STYLES (4 distinct blocks) ========== */
+    /* ========== SECTION STYLES ========== */
     .security-block {
-      padding: 90px 0;
+      padding: 50px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
@@ -119,30 +126,30 @@
 
     /* Numbered H2 style */
     .block-subtitle {
-      font-size: clamp(28px, 5vw, 42px);
+      font-size: clamp(24px, 6vw, 38px);
       font-weight: 800;
       letter-spacing: -0.01em;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       color: #FFFFFF;
       display: flex;
       flex-wrap: wrap;
-      align-items: baseline;
+      align-items: center;
       gap: 12px;
     }
 
     .block-number {
       background: #39FF14;
       color: #0D0D0D;
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 800;
-      width: 52px;
-      height: 52px;
+      width: 44px;
+      height: 44px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border-radius: 16px;
-      margin-right: 8px;
+      border-radius: 12px;
       box-shadow: 0 4px 14px rgba(57, 255, 20, 0.2);
+      flex-shrink: 0;
     }
 
     .block-title-text {
@@ -150,11 +157,11 @@
     }
 
     .block-body {
-      font-size: 1.1rem;
+      font-size: clamp(14px, 4vw, 1rem);
       line-height: 1.6;
       color: #E0E0E0;
-      margin: 24px 0 32px 0;
-      max-width: 860px;
+      margin: 20px 0 25px 0;
+      width: 100%;
     }
 
     .block-body strong {
@@ -162,208 +169,346 @@
       font-weight: 600;
     }
 
-    /* Visual container (full-width within container, image placeholder) */
+    /* IMAGE CONTAINER - PERFECT FOR ALL MOBILE SCREENS */
     .visual-container {
       width: 100%;
-      margin: 28px 0 36px 0;
+      margin: 20px 0 28px;
       background: #141414;
-      border-radius: 28px;
+      border-radius: 18px;
       overflow: hidden;
       border: 1px solid #2a2a2a;
-      transition: all 0.2s;
-      box-shadow: 0 10px 30px -15px rgba(0,0,0,0.5);
+      box-shadow: 0 8px 20px -10px rgba(0,0,0,0.5);
     }
 
+    /* Responsive image that fits ANY screen */
     .img-placeholder {
       width: 100%;
-      min-height: 320px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    /* specific image themes to reflect each section's vibe — but all high-quality + full width */
-    .img-leech {
-      background-image: url('1blog.jfif');
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
+      /* Flexible height that maintains aspect ratio */
+      aspect-ratio: 16 / 9;
+      /* Fallback height for older browsers */
+      min-height: 180px;
+    }
+
+    /* Force all images to fit perfectly */
+    .img-leech, 
+    .img-sucker, 
+    .img-tunnel, 
+    .img-shield {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Image assignments */
+    .img-leech {
+      background-image: url('1blog.jfif');
     }
 
     .img-sucker {
       background-image: url('2blog.jfif');
-      background-size: cover;
-      background-position: center;
     }
 
     .img-tunnel {
       background-image: url('3blog.jfif');
-      background-size: cover;
-      background-position: center;
     }
 
     .img-shield {
       background-image: url('4blog.jfif');
-      background-size: cover;
-      background-position: center;
     }
 
+    /* Text overlay on images */
     .img-placeholder span {
-      font-size: 1rem;
+      font-size: clamp(11px, 3.5vw, 14px);
       color: #39FF14;
-      background: rgba(0,0,0,0.6);
-      padding: 12px 24px;
-      border-radius: 60px;
-      font-weight: 500;
-      backdrop-filter: blur(4px);
+      background: rgba(0, 0, 0, 0.75);
+      padding: 8px 16px;
+      border-radius: 40px;
+      font-weight: 600;
+      backdrop-filter: blur(6px);
+      text-align: center;
+      letter-spacing: 0.5px;
     }
 
-    /* CTA button (buy now / learn more) */
+    /* CTA button */
     .section-cta {
       margin-top: 16px;
+      width: 100%;
     }
 
     .btn-cyber {
-      display: inline-flex;
+      display: flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
       background: transparent;
       border: 1.5px solid #39FF14;
       color: #39FF14;
       font-weight: 700;
-      font-size: 1rem;
-      padding: 12px 32px;
-      border-radius: 40px;
+      font-size: 14px;
+      padding: 12px 20px;
+      border-radius: 50px;
       text-decoration: none;
-      transition: 0.2s;
+      transition: all 0.2s ease;
       letter-spacing: 0.5px;
       cursor: pointer;
+      width: 100%;
+      text-align: center;
     }
 
-    .btn-cyber:hover {
-      background: #39FF14;
-      color: #0D0D0D;
-      box-shadow: 0 0 12px #39FF14;
+    .btn-cyber:active {
+      background: rgba(57, 255, 20, 0.1);
+      transform: scale(0.98);
     }
 
-    /* ========== FOOTER (minimalist, one-time pay offer) ========== */
+    /* Reality Check Section */
+    .reality-section {
+      padding-top: 20px;
+    }
+
+    /* ========== FOOTER ========== */
     .footer-offer {
       background: #0a0a0a;
-      padding: 60px 0 48px;
+      padding: 45px 0 35px;
       border-top: 1px solid rgba(57, 255, 20, 0.3);
       text-align: center;
     }
 
     .offer-badge {
-      font-size: 14px;
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 3px;
       color: #39FF14;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .offer-title {
-      font-size: clamp(24px, 5vw, 36px);
+      font-size: clamp(18px, 5vw, 28px);
       font-weight: 800;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
+      line-height: 1.35;
+      padding: 0 8px;
     }
 
     .offer-price {
-      font-size: 42px;
+      font-size: 32px;
       font-weight: 800;
       color: #39FF14;
-      margin: 16px 0 8px;
+      margin: 12px 0 8px;
       letter-spacing: -1px;
     }
 
     .offer-desc {
       color: #aaa;
       max-width: 500px;
-      margin: 12px auto 24px;
+      margin: 10px auto 20px;
+      font-size: 13px;
+      padding: 0 20px;
+      line-height: 1.5;
     }
 
     .btn-footer {
       background: #39FF14;
-      padding: 14px 42px;
+      padding: 14px 28px;
       border-radius: 60px;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 15px;
       color: #0D0D0D;
       text-decoration: none;
       display: inline-block;
       transition: all 0.2s;
+      width: 90%;
+      max-width: 320px;
+      text-align: center;
     }
 
-    .btn-footer:hover {
+    .btn-footer:active {
+      transform: scale(0.98);
       background: #28cc0e;
-      transform: translateY(-2px);
     }
 
     .footer-copyright {
-      margin-top: 48px;
-      font-size: 12px;
+      margin-top: 35px;
+      font-size: 10px;
       color: #5a5a5a;
     }
 
-    /* responsive refinements */
-    @media (max-width: 768px) {
+    /* ========== MOBILE SPECIFIC FIXES ========== */
+    
+    /* Small phones (iPhone SE, Galaxy S8, etc.) */
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 14px;
+      }
+      
+      .security-block {
+        padding: 40px 0;
+      }
+      
+      .hero {
+        padding: 40px 0 60px;
+        min-height: auto;
+      }
+      
+      .hero h1 {
+        font-size: 28px;
+      }
+      
+      .block-subtitle {
+        gap: 10px;
+      }
+      
+      .block-number {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+      }
+      
+      .visual-container {
+        border-radius: 14px;
+        margin: 18px 0;
+      }
+      
+      .img-placeholder {
+        aspect-ratio: 4 / 3;
+        min-height: 140px;
+      }
+      
+      .img-placeholder span {
+        padding: 6px 12px;
+        font-size: 10px;
+      }
+      
+      .btn-cyber, .btn-primary {
+        padding: 11px 16px;
+        font-size: 13px;
+      }
+      
+      .offer-price {
+        font-size: 28px;
+      }
+      
+      .btn-footer {
+        padding: 12px 20px;
+        font-size: 14px;
+      }
+    }
+    
+    /* Medium phones (iPhone 12/13/14, Pixel, etc.) */
+    @media (min-width: 481px) and (max-width: 768px) {
       .container {
         padding: 0 20px;
       }
-      .security-block {
-        padding: 60px 0;
+      
+      .hero h1 {
+        font-size: 38px;
       }
-      .hero {
-        padding: 60px 0 70px;
-      }
-      .block-subtitle {
-        flex-direction: column;
-        gap: 8px;
-      }
-      .block-number {
-        width: 44px;
-        height: 44px;
-        font-size: 20px;
-      }
-      .btn-cyber, .btn-primary {
-        width: auto;
-      }
-      .visual-container {
-        border-radius: 20px;
-      }
+      
       .img-placeholder {
-        min-height: 220px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .img-placeholder {
+        aspect-ratio: 16 / 9;
         min-height: 200px;
       }
-      .hero p {
-        font-size: 1.05rem;
+      
+      .btn-cyber, .btn-primary {
+        max-width: 320px;
+        margin: 0 auto;
       }
-      .block-body {
-        font-size: 1rem;
+      
+      .section-cta {
+        display: flex;
+        justify-content: center;
       }
     }
-
+    
+    /* Tablets (iPad, Galaxy Tab) */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .container {
+        padding: 0 32px;
+      }
+      
+      .hero h1 {
+        font-size: 52px;
+      }
+      
+      .img-placeholder {
+        aspect-ratio: 16 / 9;
+        min-height: 280px;
+      }
+      
+      .btn-cyber, .btn-primary {
+        max-width: 280px;
+        margin: 0;
+      }
+      
+      .section-cta {
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
+    
+    /* Large screens */
+    @media (min-width: 1025px) {
+      .container {
+        padding: 0 40px;
+      }
+      
+      .btn-cyber, .btn-primary {
+        width: auto;
+        min-width: 240px;
+      }
+      
+      .section-cta {
+        width: auto;
+      }
+    }
+    
+    /* Touch optimization for all mobile */
+    @media (hover: none) and (pointer: coarse) {
+      .btn-cyber, .btn-primary, .btn-footer {
+        cursor: default;
+      }
+      
+      /* Increase tap targets */
+      .btn-cyber, .btn-primary, .btn-footer {
+        min-height: 48px;
+      }
+    }
+    
+    /* Fix for notched phones */
+    @supports (padding: max(0px)) {
+      .container {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+      }
+      
+      .hero {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+      }
+    }
+    
     a, button {
       cursor: pointer;
     }
-
-    .btn-cyber, .btn-primary, .btn-footer {
-      transition: all 0.2s ease;
+    
+    /* Smooth scrolling for mobile */
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
 <body>
 
-<!-- Hero Section: Dark theme, high impact, background image placeholder -->
+<!-- Hero Section -->
 <section class="hero">
-  <div class="hero-bg-placeholder" aria-label="cyber background"></div>
+  <div class="hero-bg-placeholder"></div>
   <div class="container hero-content">
     <div class="hero-badge">// DIGITAL LOCKDOWN //</div>
     <h1>Your phone is being harvested for cash —<br>stop the bleeding.</h1>
@@ -373,7 +518,7 @@
 </section>
 
 <div class="container">
-  <!-- BLOCK 1: Leech Apps and Tracking Scripts -->
+  <!-- BLOCK 1: Leech Apps -->
   <section class="security-block">
     <div class="block-subtitle">
       <span class="block-number">1</span>
@@ -383,10 +528,9 @@
       Did you know the average <strong>"free" app sends your data to dozens of third parties</strong> every hour? This is why your phone is hot and your battery is trashed.  
       <strong>👉 [RUN THE DEEP ENGINE SWEEP]</strong> — This isn't just a "cleaner"—it finds the hidden tracking scripts that are literally <strong>"leeching" your data and location</strong> in the background. Stop letting them sell your movements for pennies.
     </div>
-    <!-- Visual Container: full-width image placeholder beneath body text -->
     <div class="visual-container">
       <div class="img-placeholder img-leech">
-        <span>📱 DEEP ENGINE SWEEP | HIDDEN TRACKER DETECTION</span>
+        <span>📱 DEEP ENGINE SWEEP</span>
       </div>
     </div>
     <div class="section-cta">
@@ -394,7 +538,7 @@
     </div>
   </section>
 
-  <!-- BLOCK 2: Blacklist the "Sucker Lists" -->
+  <!-- BLOCK 2: Sucker Lists -->
   <section class="security-block">
     <div class="block-subtitle">
       <span class="block-number">2</span>
@@ -406,7 +550,7 @@
     </div>
     <div class="visual-container">
       <div class="img-placeholder img-sucker">
-        <span>📞 GHOST FILTER ACTIVE | REMOVED FROM SCAM TARGET LISTS</span>
+        <span>📞 GHOST FILTER ACTIVE</span>
       </div>
     </div>
     <div class="section-cta">
@@ -414,7 +558,7 @@
     </div>
   </section>
 
-  <!-- BLOCK 3: Stop Broadcasting Data (Private Tunnel) -->
+  <!-- BLOCK 3: Private Tunnel -->
   <section class="security-block">
     <div class="block-subtitle">
       <span class="block-number">3</span>
@@ -426,7 +570,7 @@
     </div>
     <div class="visual-container">
       <div class="img-placeholder img-tunnel">
-        <span>🔐 PRIVATE TUNNEL | BANK-GRADE ENCRYPTION</span>
+        <span>🔐 PRIVATE TUNNEL</span>
       </div>
     </div>
     <div class="section-cta">
@@ -434,7 +578,7 @@
     </div>
   </section>
 
-  <!-- BLOCK 4: AI Bodyguard on Links (AI SHIELD) -->
+  <!-- BLOCK 4: AI Shield -->
   <section class="security-block">
     <div class="block-subtitle">
       <span class="block-number">4</span>
@@ -446,7 +590,7 @@
     </div>
     <div class="visual-container">
       <div class="img-placeholder img-shield">
-        <span>🤖 AI SHIELD | REAL-TIME LINK EXPLOIT KILLER</span>
+        <span>🤖 AI SHIELD</span>
       </div>
     </div>
     <div class="section-cta">
@@ -454,8 +598,8 @@
     </div>
   </section>
 
-  <!-- additional credibility block (the facts) but stays inside flow -->
-  <section class="security-block" style="padding-top: 20px;">
+  <!-- Reality Check Section -->
+  <section class="security-block reality-section">
     <div class="block-subtitle">
       <span class="block-number" style="background:#39FF14; color:#0D0D0D;">⚠️</span>
       <span class="block-title-text">The "No-Brainer" Reality Check</span>
@@ -465,9 +609,9 @@
       <strong>Fact:</strong> Scammers use <strong>"AI Voice Cloning"</strong> to pretend to be your family members—they only need 3 seconds of audio to do it.<br>
       <strong>Fact:</strong> "Free" security apps often sell your info to the same people you are trying to avoid.
     </div>
-    <div class="visual-container" style="margin-top: 20px;">
-      <div class="img-placeholder" style="background-image: url('images/4blog.jfif'); background-size: cover; background-position: center;">
-        <span>📊 1 IN 4 AMERICANS HIT — REAL-TIME THREAT MAP</span>
+    <div class="visual-container">
+      <div class="img-placeholder" style="background-image: url('4blog.jfif'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <span>📊 REAL-TIME THREAT MAP</span>
       </div>
     </div>
     <div class="section-cta">
@@ -476,7 +620,7 @@
   </section>
 </div>
 
-<!-- Minimalist Footer: One-Time Pay Offer summary -->
+<!-- Footer -->
 <footer class="footer-offer">
   <div class="container">
     <div class="offer-badge">KILL THE MONTHLY "SAFETY TAX"</div>
