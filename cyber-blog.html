@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>CYBER LOCKDOWN | Secure Your Digital Life</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0D0D0D;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      color: #FFFFFF;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* Container for consistent width */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ========== HERO SECTION (dark, high-impact) ========== */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #0a0a0a 0%, #0F0F0F 100%);
+      padding: 80px 0 100px;
+      border-bottom: 1px solid rgba(57, 255, 20, 0.2);
+    }
+
+    .hero-bg-placeholder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://placehold.co/1920x1080/1a1a1a/39FF14?text=GRID+MATRIX+CYBER+BACKGROUND');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.2;
+      z-index: 0;
+      filter: grayscale(20%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+
+    .hero-badge {
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #39FF14;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-size: clamp(44px, 8vw, 76px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #FFFFFF 70%, #39FF14 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      color: #CCCCCC;
+      max-width: 700px;
+      margin-bottom: 32px;
+      border-left: 3px solid #39FF14;
+      padding-left: 20px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      background: #39FF14;
+      color: #0D0D0D;
+      font-weight: 700;
+      font-size: 18px;
+      padding: 14px 36px;
+      border-radius: 60px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      letter-spacing: 0.3px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 12px rgba(57, 255, 20, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: #2de010;
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(57, 255, 20, 0.7);
+    }
+
+    /* ========== SECTION STYLES (4 distinct blocks) ========== */
+    .security-block {
+      padding: 90px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .security-block:last-of-type {
+      border-bottom: none;
+    }
+
+    /* Numbered H2 style */
+    .block-subtitle {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+      color: #FFFFFF;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .block-number {
+      background: #39FF14;
+      color: #0D0D0D;
+      font-size: 24px;
+      font-weight: 800;
+      width: 52px;
+      height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      margin-right: 8px;
+      box-shadow: 0 4px 14px rgba(57, 255, 20, 0.2);
+    }
+
+    .block-title-text {
+      flex: 1;
+    }
+
+    .block-body {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #E0E0E0;
+      margin: 24px 0 32px 0;
+      max-width: 860px;
+    }
+
+    .block-body strong {
+      color: #39FF14;
+      font-weight: 600;
+    }
+
+    /* Visual container (full-width within container, image placeholder) */
+    .visual-container {
+      width: 100%;
+      margin: 28px 0 36px 0;
+      background: #141414;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid #2a2a2a;
+      transition: all 0.2s;
+      box-shadow: 0 10px 30px -15px rgba(0,0,0,0.5);
+    }
+
+    .img-placeholder {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #111111;
+      min-height: 280px;
+      background-size: cover;
+      background-position: center;
+      transition: 0.2s;
+    }
+
+    /* specific image themes to reflect each section's vibe — but all high-quality + full width */
+    .img-leech {
+      background-image: url('https://placehold.co/1200x600/1e1e1e/39FF14?text=LEECH+APPS+TRACKING+SCRIPTS');
+      background-size: cover;
+      background-position: center;
+    }
+    .img-sucker {
+      background-image: url('https://placehold.co/1200x600/1e1e1e/39FF14?text=BLACKLIST+SUCKER+LISTS');
+    }
+    .img-tunnel {
+      background-image: url('https://placehold.co/1200x600/1e1e1e/39FF14?text=PRIVATE+TUNNEL+ENCRYPTION');
+    }
+    .img-shield {
+      background-image: url('https://placehold.co/1200x600/1e1e1e/39FF14?text=AI+SHIELD+LINK+PROTECTION');
+    }
+
+    .img-placeholder span {
+      font-size: 1rem;
+      color: #39FF14;
+      background: rgba(0,0,0,0.6);
+      padding: 12px 24px;
+      border-radius: 60px;
+      font-weight: 500;
+      backdrop-filter: blur(4px);
+    }
+
+    /* CTA button (buy now / learn more) */
+    .section-cta {
+      margin-top: 16px;
+    }
+    .btn-cyber {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: 1.5px solid #39FF14;
+      color: #39FF14;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 12px 32px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: 0.2s;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+    }
+    .btn-cyber:hover {
+      background: #39FF14;
+      color: #0D0D0D;
+      box-shadow: 0 0 12px #39FF14;
+    }
+
+    /* ========== FOOTER (minimalist, one-time pay offer) ========== */
+    .footer-offer {
+      background: #0a0a0a;
+      padding: 60px 0 48px;
+      border-top: 1px solid rgba(57, 255, 20, 0.3);
+      text-align: center;
+    }
+    .offer-badge {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #39FF14;
+      margin-bottom: 16px;
+    }
+    .offer-title {
+      font-size: clamp(24px, 5vw, 36px);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .offer-price {
+      font-size: 42px;
+      font-weight: 800;
+      color: #39FF14;
+      margin: 16px 0 8px;
+      letter-spacing: -1px;
+    }
+    .offer-desc {
+      color: #aaa;
+      max-width: 500px;
+      margin: 12px auto 24px;
+    }
+    .btn-footer {
+      background: #39FF14;
+      padding: 14px 42px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 18px;
+      color: #0D0D0D;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+    .btn-footer:hover {
+      background: #28cc0e;
+      transform: translateY(-2px);
+    }
+    .footer-copyright {
+      margin-top: 48px;
+      font-size: 12px;
+      color: #5a5a5a;
+    }
+
+    /* responsive refinements */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 20px;
+      }
+      .security-block {
+        padding: 60px 0;
+      }
+      .hero {
+        padding: 60px 0 70px;
+      }
+      .block-subtitle {
+        flex-direction: column;
+        gap: 8px;
+      }
+      .block-number {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+      }
+      .btn-cyber, .btn-primary {
+        width: auto;
+      }
+      .visual-container {
+        border-radius: 20px;
+      }
+      .img-placeholder {
+        min-height: 220px;
+      }
+    }
+    /* smooth image aspect ratio (maintain consistent visual) */
+    .img-placeholder {
+      width: 100%;
+      min-height: 320px;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (max-width: 640px) {
+      .img-placeholder {
+        min-height: 200px;
+      }
+      .hero p {
+        font-size: 1.05rem;
+      }
+      .block-body {
+        font-size: 1rem;
+      }
+    }
+    /* interactive link reset */
+    a, button {
+      cursor: pointer;
+    }
+    .btn-cyber, .btn-primary, .btn-footer {
+      transition: all 0.2s ease;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero Section: Dark theme, high impact, background image placeholder -->
+<section class="hero">
+  <div class="hero-bg-placeholder" aria-label="cyber grid background"></div>
+  <div class="container hero-content">
+    <div class="hero-badge">// DIGITAL LOCKDOWN //</div>
+    <h1>Your phone is being harvested for cash —<br>stop the bleeding.</h1>
+    <p>It’s not just "bad luck" anymore. In the U.S., phone hacking has become a multi-billion dollar industry where you are the product. If you’ve noticed more scam calls or a glitchy phone, it’s because someone is officially trying to profit off your data. Here is exactly how I’d shut them down.</p>
+    <a href="#" class="btn-primary">⚡ SECURE YOUR DEVICE NOW</a>
+  </div>
+</section>
+
+<div class="container">
+  <!-- BLOCK 1: Leech Apps and Tracking Scripts -->
+  <section class="security-block">
+    <div class="block-subtitle">
+      <span class="block-number">1</span>
+      <span class="block-title-text">Wipe the "Leech" Apps and Tracking Scripts</span>
+    </div>
+    <div class="block-body">
+      Did you know the average <strong>"free" app sends your data to dozens of third parties</strong> every hour? This is why your phone is hot and your battery is trashed.  
+      <strong>👉 [RUN THE DEEP ENGINE SWEEP]</strong> — This isn't just a "cleaner"—it finds the hidden tracking scripts that are literally <strong>"leeching" your data and location</strong> in the background. Stop letting them sell your movements for pennies.
+    </div>
+    <!-- Visual Container: full-width image placeholder beneath body text -->
+    <div class="visual-container">
+      <div class="img-placeholder img-leech">
+        <span>📱 DEEP ENGINE SWEEP | HIDDEN TRACKER DETECTION</span>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a href="#" class="btn-cyber">🔒 BUY NOW — NEUTRALIZE LEECHERS →</a>
+    </div>
+  </section>
+
+  <!-- BLOCK 2: Blacklist the "Sucker Lists" -->
+  <section class="security-block">
+    <div class="block-subtitle">
+      <span class="block-number">2</span>
+      <span class="block-title-text">Blacklist the "Sucker Lists"</span>
+    </div>
+    <div class="block-body">
+      Americans lost over <strong>$10 billion to phone scams last year alone</strong>. Once you answer a scam call or click a link, your number is sold on a "Sucker List" to every other vulture out there.  
+      <strong>👉 [ACTIVATE THE GHOST FILTER]</strong> — This doesn't just block calls; it pulls your number off the active target list so the <strong>"noise" finally stops</strong>.
+    </div>
+    <div class="visual-container">
+      <div class="img-placeholder img-sucker">
+        <span>📞 GHOST FILTER ACTIVE | REMOVED FROM SCAM TARGET LISTS</span>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a href="#" class="btn-cyber">🛡️ LEARN MORE — KILL SUCKER LISTS →</a>
+    </div>
+  </section>
+
+  <!-- BLOCK 3: Stop Broadcasting Data (Private Tunnel) -->
+  <section class="security-block">
+    <div class="block-subtitle">
+      <span class="block-number">3</span>
+      <span class="block-title-text">Stop Broadcasting Your Data to the Room</span>
+    </div>
+    <div class="block-body">
+      Hackers literally <strong>"sit and wait" at airports and hotels</strong> for people to log into their bank on public Wi-Fi. It takes them less than 60 seconds to "sniff" your login credentials.  
+      <strong>👉 [LOCK YOUR PRIVATE TUNNEL]</strong> — Using a phone without a bank-grade tunnel is like walking around with your wallet open. This tool makes your device <strong>invisible to anyone else</strong> on the network.
+    </div>
+    <div class="visual-container">
+      <div class="img-placeholder img-tunnel">
+        <span>🔐 PRIVATE TUNNEL | BANK-GRADE ENCRYPTION</span>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a href="#" class="btn-cyber">🚀 BUY NOW — PRIVATE TUNNEL BUNDLE →</a>
+    </div>
+  </section>
+
+  <!-- BLOCK 4: AI Bodyguard on Links (AI SHIELD) -->
+  <section class="security-block">
+    <div class="block-subtitle">
+      <span class="block-number">4</span>
+      <span class="block-title-text">Put an AI Bodyguard on Your Links</span>
+    </div>
+    <div class="block-body">
+      In 2024, <strong>"Phishing" became so sophisticated</strong> that even tech experts are getting fooled by fake texts. One wrong tap can install a "keylogger" that records every password you type.  
+      <strong>👉 [ENABLE THE AI SHIELD]</strong> — This tool uses AI to <strong>"pre-scan" every link you click</strong>. If it smells a trap, it kills the page before the hacker can get into your device.
+    </div>
+    <div class="visual-container">
+      <div class="img-placeholder img-shield">
+        <span>🤖 AI SHIELD | REAL-TIME LINK EXPLOIT KILLER</span>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a href="#" class="btn-cyber">⚡ BUY NOW — AI SHIELD ACTIVATION →</a>
+    </div>
+  </section>
+
+  <!-- additional credibility block (the facts) but stays inside flow — not numbered, but uses existing vertical consistency -->
+  <section class="security-block" style="padding-top: 20px;">
+    <div class="block-subtitle">
+      <span class="block-number" style="background:#39FF14; color:#0D0D0D;">⚠️</span>
+      <span class="block-title-text">The "No-Brainer" Reality Check</span>
+    </div>
+    <div class="block-body">
+      <strong>Fact:</strong> 1 in 4 Americans have been hit by a data breach in the last year.<br>
+      <strong>Fact:</strong> Scammers use <strong>"AI Voice Cloning"</strong> to pretend to be your family members—they only need 3 seconds of audio to do it.<br>
+      <strong>Fact:</strong> "Free" security apps often sell your info to the same people you are trying to avoid.
+    </div>
+    <div class="visual-container" style="margin-top: 20px;">
+      <div class="img-placeholder" style="background-image: url('https://placehold.co/1200x600/1a1a1a/39FF14?text=VOICE+CLONING+ALERT+DATA+BREACH+STATS'); background-size: cover; background-position: center;">
+        <span>📊 1 IN 4 AMERICANS HIT — REAL-TIME THREAT MAP</span>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a href="#" class="btn-cyber">🔍 SEE FULL REPORT →</a>
+    </div>
+  </section>
+</div>
+
+<!-- Minimalist Footer: One-Time Pay Offer summary -->
+<footer class="footer-offer">
+  <div class="container">
+    <div class="offer-badge">KILL THE MONTHLY "SAFETY TAX"</div>
+    <div class="offer-title">You shouldn’t have to pay a monthly subscription<br>just to not get robbed.</div>
+    <div class="offer-price">🔥 ONE-TIME FEE 🔥</div>
+    <div class="offer-desc">
+      Get the <strong>All-in-One Bundle</strong>: Deep Engine Sweep + Ghost Filter + Private Tunnel + AI Shield.<br>
+      Pay once, device hardened. No recurring bills. No predatory subscriptions.
+    </div>
+    <a href="#" class="btn-footer">⚡ PROTECT YOURSELF ONCE AND FOR ALL ⚡</a>
+    <div class="footer-copyright">
+      © 2026 CYBER LOCKDOWN — military-grade digital armor. One payment, lifetime protection.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
